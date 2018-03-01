@@ -45,6 +45,8 @@ function init() {
     }
   );*/
 
+  openWindow("windows/browser.html");
+/*
   chrome.storage.local.get(null,function(data){
     if(('url' in data)){
       //setup has been completed
@@ -89,7 +91,7 @@ function init() {
       openWindow("windows/setup.html");
     }
   });
-
+*/
   chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
      if(request == "reload"){
        chrome.runtime.getPlatformInfo(function(p){

@@ -192,12 +192,13 @@ $(function(){
    }
  }
 
-  chrome.storage.local.get(null,function(data){
-    allowPrint = !!data.allowprint;
+  window.onload = function() {
+    data = kiosk_settings; // being lazy and avoiding large code delta
 
-    if(data.shownav){
-      $('body').addClass('show-nav');
-    }
+    allowPrint = !!data.allowprint;
+      if(data.shownav){
+        $('body').addClass('show-nav');
+      }
 
      if(data.local){
        localAdmin = true;
@@ -292,6 +293,7 @@ $(function(){
         setInterval(rotateURL,rotaterate * 1000);
      }
      currentURL = defaultURL;
+
      if(resetcache){
        clearCache(function(){
          loadContent(true);
@@ -299,7 +301,7 @@ $(function(){
      }else{
       loadContent(true);
      }
-  });
+  };
 
   window.addEventListener('message', function(e){
     var data = e.data;
