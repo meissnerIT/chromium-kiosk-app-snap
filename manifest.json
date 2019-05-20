@@ -32,8 +32,6 @@
     "webview",
     "alwaysOnTopWindows",
     "storage",
-    "app.window.fullscreen",
-    "app.window.fullscreen.overrideEsc",
     {"fileSystem": ["directory","retainEntries"]}
   ],
   "optional_permissions": [ "audioCapture", "videoCapture" ]
